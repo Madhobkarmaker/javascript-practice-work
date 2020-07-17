@@ -1,10 +1,15 @@
   //  Feet-to-Mile
                
 function feetToMile(feet){
+    if(feet < 0){
+        return "Distance can't be negative" ;
+    }
     var mile = feet / 5280;
     return mile ; 
 }    
 var convertResult = feetToMile(10000);
+console.log("after convert mile is :",convertResult);
+var convertResult = feetToMile(-10000);
 console.log("after convert mile is :",convertResult);
 
 
@@ -31,7 +36,7 @@ console.log("total wood need :", wood);
 
 function tinyFriend(friendList) {
     if(friendList === 0){
-        return "invalid name";
+        return "invalid name list";
     }
     var shortest = friendList[0];
     for(var i = 1; i < friendList.length; i++){
