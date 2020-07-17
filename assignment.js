@@ -5,30 +5,68 @@ function feetToMile(feet){
     return mile ; 
 }    
 var convertResult = feetToMile(10000);
-console.log("after convert mile is",convertResult);
-
+console.log("after convert mile is :",convertResult);
 
 
 
 //   Wood-Calculator
 
 function woodCalculator(chair, table, bed){
-    var woodForChair = 1;
-    var woodForTable = 3;
-    var woodForBed = 5;
-    var result1 = woodForChair * chair;
-    var result2 = woodForTable * table;
-    var result3 = woodForBed * bed;
-    var totalWoodNeed = result1 + result2 + result3;
-    
-    console.log( "wood for chair:", result1, ", wood for table", result2, ", wood for bed", 
-    result3, ", total wood need", totalWoodNeed);
-    
+    if((chair < 0) || (table < 0) || (bed < 0)){
+        return "enter valid numbers";
+    }
+    var woodForChair = 1 * chair;
+    var woodForTable = 3 * table;
+    var woodForBed = 5 * bed;
+
+    var totalWoodNeed = woodForChair + woodForTable  + woodForBed ;
+    return totalWoodNeed;
 }
-woodCalculator(2, 4, 5);
-woodCalculator(5, 10, 15);
+var wood = woodCalculator(5, 10, 15);
+console.log("total wood need :", wood);
 
 
+
+//   tiny-friend
+
+function tinyFriend(friendList) {
+    if(friendList.length === 0){
+        return "name is not matched";
+    }
+    var shortest = friendList[0];
+    for(var i = 1; i < friendList.length; i++){
+      if(friendList[i].length < shortest.length){
+      shortest = friendList[i];
+       }
+    }
+    return shortest;
+  }
+var shortestWord = tinyFriend(['karim', 'madhob', 'debumondol', "tuni"]);
+console.log("shoertest string of the array is :", shortestWord );
+
+
+
+//Bricks-Calculator
+
+function brickCalculator(floorNumber){
+    if(floorNumber <= 0){
+        return "invalid number of floor";
+    }
+    var amountOfBrick;
+    var feet = 1000;
+    if(floorNumber <= 10){
+        amountOfBrick = floorNumber * 15 *feet ; 
+    }
+    else if(floorNumber > 10 && floorNumber <= 20){
+        amountOfBrick = ((10 * 15) + ((floorNumber - 10) * 12)) * feet;
+    }
+    else {
+        amountOfBrick = ((10 * 15) + (10 * 12) + ((floorNumber - 20) * 10)) * feet;
+    }
+    return amountOfBrick ;
+}
+var totalBricks = brickCalculator(50);
+console.log("number of bricks need :",totalBricks);
 
 
 
