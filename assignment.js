@@ -30,8 +30,8 @@ console.log("total wood need :", wood);
 //   tiny-friend
 
 function tinyFriend(friendList) {
-    if(friendList.length === 0){
-        return "name is not matched";
+    if(friendList === 0){
+        return "invalid name";
     }
     var shortest = friendList[0];
     for(var i = 1; i < friendList.length; i++){
@@ -42,7 +42,7 @@ function tinyFriend(friendList) {
     return shortest;
   }
 var shortestWord = tinyFriend(['karim', 'madhob', 'debumondol', "tuni"]);
-console.log("shoertest string of the array is :", shortestWord );
+console.log("shortest string of the array is :", shortestWord );
 
 
 
@@ -65,7 +65,7 @@ function brickCalculator(floorNumber){
     }
     return amountOfBrick ;
 }
-var totalBricks = brickCalculator(50);
+var totalBricks = brickCalculator(17);
 console.log("number of bricks need :",totalBricks);
 
 
